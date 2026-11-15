@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drug Device 360</title>
+<meta name="description" content="Drug Device 360 (DD360) is a senior consulting team for drug-device combination products: device strategy, development, design verification, human factors, quality and US FDA / EU MDR submissions for prefilled syringes, autoinjectors, pens and on-body injectors.">
+<meta property="og:title" content="Drug Device 360 | Combination Product Consulting">
+<meta property="og:description" content="From molecule to mechanism. Senior, hands-on support for prefilled syringes, autoinjectors, pens and on-body injectors.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="icon" type="image/svg+xml" href="assets/dd360-mark.svg">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta property="og:image" content="https://lalith1-stack.github.io/drugdevice360/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B1626">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: dark blueprint hero with an engineering drawing of the device; light, airy body organised by the product lifecycle; mono labels carry the technical detail. */
+:root{
+  --ink:#0B1626;
+  --ink-2:#13243B;
+  --paper:#F4F6FA;
+  --cobalt:#2B59FF;
+  --coral:#FF5A36;
+  --mint:#12B89A;
+  --text:#1A2433;
+  --muted:#5E6B7E;
+  --line:#DDE3EC;
+  --white:#FFFFFF;
+  --f-display:"Hanken Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --max:1200px;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-display);color:var(--text);background:var(--white);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+h1,h2,h3,h4{font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(32px,4.2vw,52px);color:var(--ink)}
+h2 em,h1 em{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.label{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cobalt);display:inline-flex;align-items:center;gap:10px}
+
+.lede{font-size:19px;color:var(--muted);max-width:640px;margin-top:18px}
+section{padding:120px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:600;font-size:16px;transition:transform .2s,background .2s,box-shadow .2s;border:0;cursor:pointer;font-family:inherit}
+.btn svg{transition:transform .2s}
+.btn:hover svg{transform:translateX(3px)}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 10px 30px -10px rgba(255,90,54,.7)}
+.btn-coral:hover{background:#ff4419;transform:translateY(-1px)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.28)}
+.btn-line:hover{box-shadow:inset 0 0 0 1.5px #fff}
+
+/* ---------- header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,box-shadow .3s}
+header.solid{background:rgba(11,22,38,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;color:#fff}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:19px;letter-spacing:-.01em}
+.brand b{color:var(--coral);font-weight:700}
+.nav ul{display:flex;gap:34px;list-style:none;font-size:15px;font-weight:500}
+.nav ul a{opacity:.8;transition:opacity .2s}
+.nav ul a:hover{opacity:1}
+.nav .btn{padding:11px 20px;font-size:15px}
+.menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--ink);color:#fff;padding:168px 0 0;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 70% 40%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 20%,transparent 75%)}
+.hero:after{content:"";position:absolute;width:760px;height:760px;right:-200px;top:-220px;background:radial-gradient(circle,rgba(43,89,255,.38),transparent 62%);pointer-events:none}
+.hero-top{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:end}
+.hero .label{color:#8EA8FF}
+.hero h1{font-size:clamp(44px,6.4vw,86px);margin:22px 0 26px;font-weight:800}
+.hero h1 em{color:var(--coral)}
+.hero p.sub{font-size:20px;color:#B9C6D8;max-width:560px;margin-bottom:38px}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-note{font-family:var(--f-mono);font-size:12.5px;color:#7F8EA5;margin-top:26px}
+.drawing{position:relative;z-index:2;margin-top:70px}
+.drawing svg{display:block;width:100%;height:auto}
+.fig{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:12px;color:#6F7F97;padding:14px 0 26px;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap;gap:10px}
+.std-strip{position:relative;z-index:2;background:var(--ink-2);border-top:1px solid rgba(255,255,255,.06)}
+.std-strip .wrap{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.std{flex:1 0 auto;padding:22px 26px;border-right:1px solid rgba(255,255,255,.07);font-family:var(--f-mono);font-size:13px;color:#C9D4E4;white-space:nowrap}
+.std:first-child{padding-left:0}
+.std span{display:block;font-size:11px;color:#6F7F97;margin-bottom:3px;letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- problem ---------- */
+.problem{background:var(--white)}
+.problem-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+.problem h2{position:sticky;top:120px}
+.pains{display:grid;gap:0;border-top:1px solid var(--line)}
+.pain{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pain .n{font-family:var(--f-mono);font-size:13px;color:var(--coral);padding-top:5px}
+.pain h3{font-size:22px;color:var(--ink);margin-bottom:8px}
+.pain p{color:var(--muted)}
+.pain .fix{margin-top:12px;color:var(--text);font-size:16px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline}
+.pain .fix span{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--cobalt);white-space:nowrap}
+
+/* ---------- lifecycle ---------- */
+.lifecycle{background:var(--paper)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+.phases{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--white);border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(11,22,38,.35);border:1px solid var(--line)}
+.phase{padding:30px 26px 34px;border-right:1px solid var(--line);position:relative;transition:background .25s}
+.phase:last-child{border-right:0}
+.phase:hover{background:#FAFBFF}
+.phase .bar{height:5px;border-radius:5px;margin-bottom:26px}
+.phase:nth-child(1) .bar{background:var(--cobalt);width:30%}
+.phase:nth-child(2) .bar{background:var(--cobalt);width:50%}
+.phase:nth-child(3) .bar{background:var(--coral);width:70%}
+.phase:nth-child(4) .bar{background:var(--coral);width:85%}
+.phase:nth-child(5) .bar{background:var(--mint);width:100%}
+.phase .ph{font-family:var(--f-mono);font-size:12px;color:var(--muted);letter-spacing:.06em}
+.phase h3{font-size:21px;color:var(--ink);margin:6px 0 16px;min-height:48px}
+.phase ul{list-style:none;font-size:15px;color:#3A4659;display:grid;gap:9px}
+.phase li{padding-left:16px;position:relative;line-height:1.45}
+.phase li:before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:2px;background:var(--line)}
+.phase:hover li:before{background:var(--cobalt)}
+.phase .out{margin-top:22px;padding-top:16px;border-top:1px dashed var(--line);font-family:var(--f-mono);font-size:12px;color:var(--muted);line-height:1.6}
+.phase .out b{color:var(--ink);font-weight:500;display:block;margin-bottom:2px}
+.extra{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:15px;color:var(--muted)}
+.extra span.t{font-weight:600;color:var(--ink);margin-right:6px}
+.pill{padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--line);font-size:14px;color:#3A4659}
+
+/* ---------- devices ---------- */
+.devices{background:var(--white)}
+.dev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dev{border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:14px;transition:border-color .25s,transform .25s,box-shadow .25s;background:var(--white)}
+.dev:hover{border-color:var(--cobalt);transform:translateY(-3px);box-shadow:0 24px 50px -30px rgba(43,89,255,.45)}
+.dev .art{height:120px;border-radius:14px;background:var(--paper);display:grid;place-items:center;overflow:hidden}
+.dev .art svg{width:88%;height:auto}
+.dev h3{font-size:20px;color:var(--ink)}
+.dev p{font-size:15px;color:var(--muted)}
+.dev .std-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.dev .std-tags span{font-family:var(--f-mono);font-size:11.5px;padding:4px 9px;border-radius:6px;background:#EEF2FF;color:#2442C7}
+.dev.feature{background:var(--ink);color:#fff;border-color:var(--ink)}
+.dev.feature h3{color:#fff}
+.dev.feature p{color:#AEBBD0}
+.dev.feature .art{background:var(--ink-2)}
+.dev.feature .std-tags span{background:rgba(255,90,54,.16);color:#FF9A82}
+.dev.feature .tag{align-self:flex-start;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);border:1px solid rgba(255,90,54,.5);padding:4px 10px;border-radius:999px}
+
+/* ---------- why ---------- */
+.why{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.why:before{content:"";position:absolute;width:700px;height:700px;left:-260px;bottom:-320px;background:radial-gradient(circle,rgba(255,90,54,.22),transparent 60%)}
+.why h2{color:#fff}
+.why .label{color:#8EA8FF}
+.why .lede{color:#AEBBD0}
+.why-grid{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.08);margin-top:60px}
+.why-item{background:var(--ink);padding:40px 38px;border-top:3px solid transparent}
+.why-item:nth-child(1),.why-item:nth-child(4){border-top-color:var(--cobalt)}.why-item:nth-child(2),.why-item:nth-child(3){border-top-color:var(--coral)}
+.why-item .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#7F8EA5;margin-bottom:14px;display:block}
+.why-item .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(43,89,255,.16)}
+.why-item:nth-child(2) .ic,.why-item:nth-child(3) .ic{background:rgba(255,90,54,.16)}
+.why-item h3{font-size:22px;margin-bottom:8px}
+.why-item p{color:#AEBBD0;font-size:16px}
+
+/* ---------- engage ---------- */
+.engage{background:var(--paper)}
+.eng-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.eng{background:var(--white);border-radius:22px;padding:34px 30px;border:1px solid var(--line);display:flex;flex-direction:column}
+.eng .dur{font-family:var(--f-mono);font-size:12.5px;color:var(--coral);margin-bottom:18px}
+.eng h3{font-size:24px;color:var(--ink);margin-bottom:12px}
+.eng p{color:var(--muted);font-size:16px;margin-bottom:20px}
+.eng ul{list-style:none;display:grid;gap:10px;font-size:15px;border-top:1px solid var(--line);padding-top:20px;margin-top:auto}
+.eng li{display:flex;gap:10px;align-items:flex-start}
+.eng li svg{flex:none;margin-top:3px}
+.eng.hl{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.eng.hl h3{color:#fff}
+.eng.hl p{color:#D6DFFF}
+.eng.hl .dur{color:#FFD2C7}
+.eng.hl ul{border-color:rgba(255,255,255,.25)}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:80px;position:relative}
+.steps:before{content:"";position:absolute;top:21px;left:22px;right:22px;height:1.5px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
+.step{position:relative}
+.step .dot{width:44px;height:44px;border-radius:50%;background:var(--white);border:1.5px solid var(--ink);display:grid;place-items:center;font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--ink);margin-bottom:20px;position:relative}
+.step:first-child .dot{background:var(--coral);border-color:var(--coral);color:#fff}
+.step h4{font-size:19px;color:var(--ink);margin-bottom:6px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* ---------- faq ---------- */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+details{border-bottom:1px solid var(--line);padding:24px 0}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-size:19px;font-weight:600;color:var(--ink)}
+summary::-webkit-details-marker{display:none}
+summary .pm{flex:none;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:transform .25s,background .25s,border-color .25s}
+details[open] summary .pm{transform:rotate(45deg);background:var(--coral);border-color:var(--coral);color:#fff}
+details p{color:var(--muted);margin-top:12px;max-width:640px}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.contact:after{content:"";position:absolute;width:800px;height:800px;right:-300px;top:-300px;background:radial-gradient(circle,rgba(43,89,255,.35),transparent 60%)}
+.contact-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.05fr;gap:70px;align-items:start}
+.contact h2{color:#fff}
+.contact .label{color:#8EA8FF}
+.contact .lede{color:#AEBBD0}
+.c-list{margin-top:40px;display:grid;gap:0;border-top:1px solid rgba(255,255,255,.1)}
+.c-list div{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:16px}
+.c-list span{font-family:var(--f-mono);font-size:12px;color:#7F8EA5;letter-spacing:.06em;text-transform:uppercase;padding-top:3px}
+.c-list a:hover{color:var(--coral)}
+form{background:var(--white);color:var(--text);border-radius:24px;padding:38px;display:grid;gap:18px;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+form h3{font-size:22px;color:var(--ink)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:7px}
+input,select,textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:16px;color:var(--text);background:var(--white);transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cobalt)}
+textarea{min-height:120px;resize:vertical}
+.chips-in{display:flex;flex-wrap:wrap;gap:8px}
+.chips-in input{position:absolute;opacity:0;width:1px;height:1px}
+.chips-in label{margin:0;font-weight:500;font-size:14px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);cursor:pointer;color:#3A4659;transition:.2s}
+.chips-in input:checked+label{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips-in input:focus-visible+label{outline:3px solid var(--coral);outline-offset:2px}
+form .btn{justify-content:center}
+.form-msg{display:none;font-size:14px;padding:12px 14px;border-radius:12px;background:#EEF2FF;color:#2442C7}
+.form-note{font-size:13px;color:var(--muted)}
+
+footer{background:#070F1B;color:#8291A8;padding:56px 0 40px;font-size:14px}
+.f-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.07)}
+.f-top .brand{color:#fff}
+.f-links{display:flex;gap:28px;flex-wrap:wrap}
+.f-links a:hover{color:#fff}
+.disc{max-width:760px;font-size:12.5px;line-height:1.7;margin-top:28px;color:#66758C}
+.f-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:18px;font-family:var(--f-mono);font-size:12px}
+
+/* ---------- motion ---------- */
+@keyframes plunge{0%,15%{transform:translateX(0)}55%,75%{transform:translateX(34px)}100%{transform:translateX(0)}}
+@keyframes fill{0%,15%{transform:scaleX(1)}55%,75%{transform:scaleX(.55)}100%{transform:scaleX(1)}}
+.anim-plunger{animation:plunge 6s ease-in-out infinite}
+.anim-liquid{transform-origin:right center;transform-box:fill-box;animation:fill 6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  .phases{grid-template-columns:repeat(3,1fr)}
+  .phase:nth-child(3){border-right:0}
+  .phase:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .dev-grid,.eng-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  section{padding:90px 0}
+  .hero-top,.problem-grid,.faq-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .problem h2{position:static}
+  .why-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps:before{display:none}
+  .nav ul{display:none;position:absolute;top:76px;left:0;right:0;background:var(--ink);flex-direction:column;gap:0;padding:8px 0 16px}
+  .nav ul.open{display:flex}
+  .nav ul a{display:block;padding:14px 28px;opacity:1}
+  .menu-btn{display:block}
+  .nav .btn{display:none}
+  header{background:rgba(11,22,38,.92)}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .hero{padding-top:130px}
+  .phases,.dev-grid,.eng-grid,.row,.steps{grid-template-columns:1fr}
+  .phase{border-right:0;border-bottom:1px solid var(--line)}
+  .why-item{grid-template-columns:1fr;padding:32px 26px}
+  form{padding:26px}
+  .drawing{margin-top:40px}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Drug Device 360, home">
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><path fill="#FF5A36" d="M29.79 6.09 A26 26 0 0 0 29.79 57.91 Z"/><path fill="#2B59FF" d="M34.21 6.09 A26 26 0 0 1 34.21 57.91 L34.21 47.44 A15.60 15.60 0 0 0 34.21 16.56 Z"/></svg>
+      <span>Drug Device <b>360</b></span>
+    </a>
+    <ul id="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#devices">Devices</a></li>
+      <li><a href="#why">Why DD360</a></li>
+      <li><a href="#engage">Engagements</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-coral">Book a discovery call</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <span class="label">Combination product consulting</span>
+        <h1 id="h1">From <em>molecule</em> to mechanism.</h1>
+      </div>
+      <div>
+        <p class="sub">A senior, hands-on team for prefilled syringes, autoinjectors, pens and on-body injectors. We work across the drug and the device so your programme reaches submission without the late surprises.</p>
+        <div class="ctas">
+          <a href="#contact" class="btn btn-coral">Discuss your programme
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#services" class="btn btn-line">See what we do</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawing" aria-label="Exploded engineering drawing of an autoinjector showing cap, needle shield, prefilled syringe, plunger rod, drive spring and rear housing">
+      <svg viewBox="0 0 1200 300" role="img" aria-hidden="true">
+        <defs>
+          <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDE8FF" stop-opacity=".55"/><stop offset=".5" stop-color="#9FB6FF" stop-opacity=".18"/><stop offset="1" stop-color="#DDE8FF" stop-opacity=".45"/></linearGradient>
+          <linearGradient id="drug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5D83FF"/><stop offset="1" stop-color="#2B59FF"/></linearGradient>
+          <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A3E5C"/><stop offset=".45" stop-color="#1B2D47"/><stop offset="1" stop-color="#14233A"/></linearGradient>
+          <linearGradient id="coralg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF7A5C"/><stop offset="1" stop-color="#E8441F"/></linearGradient>
+          <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#3A5274" stroke-width="1"/></pattern>
+        </defs>
+        <!-- centre line -->
+        <line x1="20" y1="150" x2="1180" y2="150" stroke="#2B59FF" stroke-opacity=".35" stroke-width="1" stroke-dasharray="18 6 3 6"/>
+
+        <!-- 1 cap -->
+        <g>
+          <rect x="40" y="118" width="110" height="64" rx="14" fill="url(#coralg)"/>
+          <rect x="40" y="118" width="22" height="64" rx="10" fill="#C9361A"/>
+          <rect x="122" y="128" width="40" height="44" rx="6" fill="#E8441F"/>
+          <path d="M70 130 h44 M70 140 h44 M70 160 h44 M70 170 h44" stroke="#FFB4A2" stroke-opacity=".35" stroke-width="2"/>
+        </g>
+        <!-- 2 needle shield -->
+        <g>
+          <rect x="196" y="126" width="120" height="48" rx="8" fill="#FFD84D"/>
+          <rect x="196" y="126" width="120" height="10" rx="5" fill="#FFE68A"/>
+          <rect x="300" y="132" width="16" height="36" fill="#E6B800"/>
+          <line x1="180" y1="150" x2="196" y2="150" stroke="#C9D4E4" stroke-width="1.5"/>
+        </g>
+        <!-- 3 front housing with window -->
+        <g>
+          <rect x="356" y="110" width="250" height="80" rx="18" fill="url(#body)" stroke="#3A5274" stroke-width="1.5"/>
+          <rect x="420" y="128" width="120" height="44" rx="10" fill="#0B1626" stroke="#4B6690" stroke-width="1.2"/>
+          <rect x="426" y="134" width="108" height="32" rx="7" fill="#2B59FF" fill-opacity=".22"/>
+          <path d="M380 120 v60 M590 120 v60" stroke="#3A5274" stroke-width="1"/>
+        </g>
+        <!-- 4 prefilled syringe -->
+        <g>
+          <rect x="640" y="130" width="22" height="40" rx="3" fill="#C9D4E4"/>
+          <line x1="618" y1="150" x2="640" y2="150" stroke="#E8EEF7" stroke-width="2"/>
+          <rect x="662" y="124" width="180" height="52" rx="7" fill="url(#glass)" stroke="#C9D7F5" stroke-width="1.5"/>
+          <rect class="anim-liquid" x="668" y="130" width="140" height="40" rx="4" fill="url(#drug)"/>
+          <rect x="808" y="128" width="16" height="44" rx="3" fill="#1A1F2B"/>
+          <rect x="842" y="114" width="10" height="72" rx="3" fill="#C9D7F5"/>
+          <path d="M680 128 v6 M700 128 v4 M720 128 v6 M740 128 v4 M760 128 v6 M780 128 v4" stroke="#E8EEF7" stroke-width="1.2"/>
+        </g>
+        <!-- 5 plunger rod -->
+        <g class="anim-plunger">
+          <rect x="880" y="140" width="110" height="20" rx="4" fill="#8EA3C2"/>
+          <rect x="880" y="136" width="12" height="28" rx="3" fill="#B7C6DC"/>
+        </g>
+        <!-- 6 spring -->
+        <polyline points="1000,150 1006,128 1014,172 1022,128 1030,172 1038,128 1046,172 1054,128 1062,172 1070,128 1078,172 1084,150" fill="none" stroke="#FF5A36" stroke-width="3" stroke-linejoin="round"/>
+        <!-- 7 rear housing / button -->
+        <g>
+          <rect x="1096" y="114" width="70" height="72" rx="16" fill="url(#body)" stroke="#3A5274" stroke-width="1.5"/>
+          <rect x="1150" y="128" width="26" height="44" rx="10" fill="#FF5A36"/>
+        </g>
+
+        <!-- callouts -->
+        <g font-family="IBM Plex Mono, monospace" font-size="12" fill="#9FB0C8">
+          <g stroke="#4B6690" stroke-width="1" fill="none">
+            <path d="M95 118 V60 H120"/><path d="M256 126 V84 H280"/><path d="M480 110 V44 H504"/>
+            <path d="M752 124 V70 H776"/><path d="M935 140 V96 H958"/><path d="M1042 172 V236 H1066"/><path d="M1131 186 V250 H1100"/>
+          </g>
+          <g fill="#FF5A36"><circle cx="95" cy="118" r="3"/><circle cx="256" cy="126" r="3"/><circle cx="480" cy="110" r="3"/><circle cx="752" cy="124" r="3"/><circle cx="935" cy="140" r="3"/><circle cx="1042" cy="172" r="3"/><circle cx="1131" cy="186" r="3"/></g>
+          <text x="126" y="64"><tspan fill="#FFFFFF">01</tspan>  Cap · removal force</text>
+          <text x="286" y="88"><tspan fill="#FFFFFF">02</tspan>  Needle shield · ISO 23908</text>
+          <text x="510" y="48"><tspan fill="#FFFFFF">03</tspan>  Housing · inspection window</text>
+          <text x="782" y="74"><tspan fill="#FFFFFF">04</tspan>  PFS · ISO 11040 · CCI</text>
+          <text x="964" y="100"><tspan fill="#FFFFFF">05</tspan>  Plunger rod</text>
+          <text x="1072" y="240"><tspan fill="#FFFFFF">06</tspan>  Drive spring</text>
+          <text x="962" y="254" text-anchor="end"><tspan fill="#FFFFFF">07</tspan>  Activation button · audible click</text>
+        </g>
+        <!-- dimension line -->
+        <g stroke="#4B6690" stroke-width="1" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6F7F97">
+          <line x1="356" y1="226" x2="1166" y2="226" stroke-dasharray="2 4"/>
+          <path d="M356 220 v12 M1166 220 v12" />
+          <text x="560" y="218" stroke="none">dose delivery · injection time · extended needle length</text>
+        </g>
+      </svg>
+      <div class="fig"><span>FIG. 01 · Autoinjector, exploded view (illustrative)</span><span>Every component is a design input, a risk and a test.</span></div>
+    </div>
+  </div>
+  <div class="std-strip">
+    <div class="wrap">
+      <div class="std"><span>US</span>21 CFR Part 4</div>
+      <div class="std"><span>EU</span>MDR Art. 117</div>
+      <div class="std"><span>Injection systems</span>ISO 11608</div>
+      <div class="std"><span>Prefilled syringes</span>ISO 11040</div>
+      <div class="std"><span>Risk</span>ISO 14971</div>
+      <div class="std"><span>Usability</span>IEC 62366-1</div>
+      <div class="std"><span>Quality</span>ISO 13485</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROBLEM ================= -->
+<section class="problem">
+  <div class="wrap problem-grid">
+    <div>
+      <span class="label">Why programmes stall</span>
+      <h2 style="margin-top:18px">The drug is ready. The device often isn't.</h2>
+      <p class="lede">Most combination product delays come from the gaps between teams, not from the science. These are the four we see most.</p>
+    </div>
+    <div class="pains">
+      <div class="pain"><span class="n">01</span><div><h3>Drug and device teams work in silos</h3><p>Formulation, CMC and device engineering each make decisions in isolation, and the conflicts surface at integration.</p><p class="fix"><span>Our approach</span>One team reviews viscosity, fill volume and injection time together, before the platform is locked.</p></div></div>
+      <div class="pain"><span class="n">02</span><div><h3>Human factors arrives too late</h3><p>Use errors found in a summative study mean redesign, new test data and a delayed filing.</p><p class="fix"><span>Our approach</span>URRA and formative studies start at the concept stage, while design changes are still cheap.</p></div></div>
+      <div class="pain"><span class="n">03</span><div><h3>Design verification gets repeated</h3><p>Vague design inputs and unvalidated test methods lead to failed or repeated DV runs.</p><p class="fix"><span>Our approach</span>Measurable, traceable requirements and validated methods before the first DV protocol is signed.</p></div></div>
+      <div class="pain"><span class="n">04</span><div><h3>Regulatory paths are unclear</h3><p>PMOA, 21 CFR Part 4 and Article 117 Notified Body Opinions each bring their own documentation expectations.</p><p class="fix"><span>Our approach</span>A US and EU route map agreed at the start, so the DHF is built once for both.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LIFECYCLE / SERVICES ================= -->
+<section class="lifecycle" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="label">Services</span>
+        <h2 style="margin-top:18px">From first concept to post-market</h2>
+      </div>
+      <p class="lede" style="max-width:440px;margin:0">Bring us in for one stage or the whole journey. Each engagement ends with documents your auditors and reviewers can use.</p>
+    </div>
+    <div class="phases">
+      <div class="phase">
+        <div class="bar"></div>
+        <span class="ph">PHASE 01</span>
+        <h3>Strategy &amp; feasibility</h3>
+        <ul><li>Device &amp; platform selection</li><li>Combination product classification (PMOA)</li><li>Target product profile, drug + device</li><li>Supplier &amp; technology scouting</li></ul>
+        <div class="out"><b>You get</b>Platform decision report, regulatory route map</div>
+      </div>
+      <div class="phase">
+        <div class="bar"></div>
+        <span class="ph">PHASE 02</span>
+        <h3>Design &amp; development</h3>
+        <ul><li>User needs to design inputs (QFD)</li><li>Risk management: PHA, FMEA, FTA</li><li>Use-related risk analysis (URRA)</li><li>Formative usability studies</li></ul>
+        <div class="out"><b>You get</b>Design input requirements, risk file, HF plan</div>
+      </div>
+      <div class="phase">
+        <div class="bar"></div>
+        <span class="ph">PHASE 03</span>
+        <h3>Verification &amp; validation</h3>
+        <ul><li>DV strategy &amp; protocols, ISO 11608</li><li>Test method development &amp; validation</li><li>Stability, transport &amp; packaging</li><li>Summative (HF validation) studies</li></ul>
+        <div class="out"><b>You get</b>DV protocols &amp; reports via partner labs, HFE report</div>
+      </div>
+      <div class="phase">
+        <div class="bar"></div>
+        <span class="ph">PHASE 04</span>
+        <h3>Submission &amp; transfer</h3>
+        <ul><li>Design History File compilation</li><li>Module 3: 3.2.P &amp; 3.2.R device sections</li><li>EU MDR Art. 117 NBOp support</li><li>Design transfer, process validation, PPQ</li></ul>
+        <div class="out"><b>You get</b>Submission-ready DHF and device dossier</div>
+      </div>
+      <div class="phase">
+        <div class="bar"></div>
+        <span class="ph">PHASE 05</span>
+        <h3>Lifecycle &amp; post-market</h3>
+        <ul><li>DHF remediation &amp; gap closure</li><li>Complaint handling &amp; trending</li><li>PMS &amp; PMCF under EU MDR</li><li>Change impact &amp; bridging strategy</li></ul>
+        <div class="out"><b>You get</b>Remediated files, PMS plan, change assessments</div>
+      </div>
+    </div>
+    <div class="extra"><span class="t">Also available:</span>
+      <span class="pill">QMS: ISO 13485 &amp; 21 CFR Part 4</span><span class="pill">Biocompatibility (ISO 10993)</span><span class="pill">Luer (ISO 80369)</span><span class="pill">R&amp;D / QC lab setup</span><span class="pill">FDA briefing packages</span><span class="pill">Registrations: UK, Canada, ROW, India</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEVICES ================= -->
+<section class="devices" id="devices">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="label">Device coverage</span>
+        <h2 style="margin-top:18px">The delivery systems we work on</h2>
+      </div>
+      <p class="lede" style="max-width:440px;margin:0">Injectable platforms for biologics, biosimilars, peptides and small molecules, including high-viscosity and large-volume formats.</p>
+    </div>
+    <div class="dev-grid">
+      <article class="dev">
+        <div class="art"><svg viewBox="0 0 240 80" aria-hidden="true"><rect x="10" y="34" width="30" height="12" rx="2" fill="#8EA3C2"/><line x1="0" y1="40" x2="10" y2="40" stroke="#5E6B7E" stroke-width="2"/><rect x="40" y="26" width="140" height="28" rx="5" fill="#E6EDFF" stroke="#2B59FF" stroke-width="1.5"/><rect x="46" y="31" width="100" height="18" rx="3" fill="#2B59FF"/><rect x="146" y="29" width="10" height="22" rx="2" fill="#1A1F2B"/><rect x="156" y="38" width="44" height="4" fill="#8EA3C2"/><rect x="180" y="18" width="8" height="44" rx="2" fill="#B7C6DC"/><rect x="200" y="32" width="30" height="16" rx="4" fill="#B7C6DC"/></svg></div>
+        <h3>Prefilled syringes</h3>
+        <p>Glass and polymer PFS, staked-needle and Luer lock, with safety systems and plunger-stopper interfaces.</p>
+        <div class="std-tags"><span>ISO 11040</span><span>ISO 23908</span><span>ISO 80369</span></div>
+      </article>
+      <article class="dev">
+        <div class="art"><svg viewBox="0 0 240 80" aria-hidden="true"><rect x="10" y="24" width="40" height="32" rx="10" fill="#FF5A36"/><rect x="52" y="22" width="150" height="36" rx="12" fill="#13243B"/><rect x="92" y="30" width="56" height="20" rx="5" fill="#2B59FF" fill-opacity=".55"/><rect x="202" y="28" width="26" height="24" rx="8" fill="#FF5A36"/></svg></div>
+        <h3>Autoinjectors</h3>
+        <p>Single-use and reusable, 1 mL to 2.25 mL, mechanical and connected, for home self-injection.</p>
+        <div class="std-tags"><span>ISO 11608-1</span><span>ISO 11608-5</span><span>IEC 62366-1</span></div>
+      </article>
+      <article class="dev feature">
+        <span class="tag">Current focus</span>
+        <div class="art"><svg viewBox="0 0 240 80" aria-hidden="true"><rect x="10" y="30" width="16" height="20" rx="3" fill="#B7C6DC"/><rect x="26" y="26" width="140" height="28" rx="12" fill="#2B59FF"/><rect x="60" y="32" width="50" height="16" rx="4" fill="#0B1626" fill-opacity=".5"/><text x="85" y="44" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#fff">0.25</text><rect x="166" y="28" width="40" height="24" rx="6" fill="#FF5A36"/><rect x="206" y="32" width="22" height="16" rx="5" fill="#FF7A5C"/></svg></div>
+        <h3>GLP-1 &amp; biosimilar pens</h3>
+        <p>Multi-dose and fixed-dose pen injectors for peptides and biosimilars, including comparative use and threshold analyses for generic and biosimilar submissions.</p>
+        <div class="std-tags"><span>ISO 11608-1</span><span>Comparative use HF</span><span>Bridging</span></div>
+      </article>
+      <article class="dev">
+        <div class="art"><svg viewBox="0 0 240 80" aria-hidden="true"><ellipse cx="120" cy="56" rx="96" ry="10" fill="#DDE3EC"/><path d="M50 52 C50 22, 190 22, 190 52 Z" fill="#13243B"/><rect x="96" y="30" width="48" height="10" rx="5" fill="#12B89A"/><circle cx="160" cy="40" r="5" fill="#FF5A36"/></svg></div>
+        <h3>On-body injectors</h3>
+        <p>Wearable and patch delivery for large volumes and high-viscosity biologics over minutes, not seconds.</p>
+        <div class="std-tags"><span>ISO 11608-6</span><span>IEC 60601</span><span>Adhesion</span></div>
+      </article>
+      <article class="dev">
+        <div class="art"><svg viewBox="0 0 240 80" aria-hidden="true"><rect x="40" y="18" width="40" height="10" rx="2" fill="#8EA3C2"/><rect x="44" y="28" width="32" height="8" fill="#B7C6DC"/><rect x="36" y="36" width="48" height="34" rx="6" fill="#E6EDFF" stroke="#2B59FF" stroke-width="1.5"/><rect x="40" y="50" width="40" height="16" rx="3" fill="#2B59FF"/><rect x="110" y="30" width="90" height="26" rx="8" fill="#13243B"/><rect x="118" y="36" width="34" height="14" rx="3" fill="#2B59FF" fill-opacity=".5"/><rect x="160" y="36" width="34" height="14" rx="3" fill="#FFD84D" fill-opacity=".85"/></svg></div>
+        <h3>Vials, kits &amp; dual-chamber</h3>
+        <p>Reconstitution systems, vial adapters, transfer devices and co-packaged kits.</p>
+        <div class="std-tags"><span>ISO 8362</span><span>CCI</span><span>Co-packaged</span></div>
+      </article>
+      <article class="dev">
+        <div class="art"><svg viewBox="0 0 240 80" aria-hidden="true"><rect x="60" y="20" width="56" height="44" rx="12" fill="#13243B"/><circle cx="88" cy="42" r="12" fill="none" stroke="#12B89A" stroke-width="3"/><path d="M82 42 l4 4 l8 -8" stroke="#12B89A" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M128 42 h20" stroke="#8EA3C2" stroke-width="2" stroke-dasharray="3 4"/><rect x="156" y="16" width="30" height="52" rx="6" fill="#E6EDFF" stroke="#2B59FF" stroke-width="1.5"/><rect x="162" y="24" width="18" height="30" rx="2" fill="#2B59FF" fill-opacity=".35"/></svg></div>
+        <h3>Connected &amp; sensor devices</h3>
+        <p>Smart add-ons, dose capture and CGM-adjacent systems, from landscape review to software and cybersecurity inputs.</p>
+        <div class="std-tags"><span>IEC 62304</span><span>Cybersecurity</span><span>SaMD</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="why" id="why">
+  <div class="wrap" style="position:relative">
+    <span class="label">Why Drug Device 360</span>
+    <h2 style="margin-top:18px;max-width:820px">Senior people, on both sides of the combination.</h2>
+    <p class="lede">Our founders have developed combination products inside global pharmaceutical companies, on both the drug and the device side.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div><span class="k">Team</span><h3>The people you meet do the work</h3><p>The consultants who scope your project are the ones who write the protocols and reports. They stay your point of contact throughout.</p></div>
+      </div>
+      <div class="why-item">
+        <div><span class="k">Expertise</span><h3>Drug and device in one room</h3><p>Formulation, analytical and CMC knowledge alongside device engineering, human factors and quality.</p></div>
+      </div>
+      <div class="why-item">
+        <div><span class="k">Testing</span><h3>Testing through named partner labs</h3><p>We design the test strategy and protocols, then run them at qualified partner laboratories. Each proposal says which lab does what.</p></div>
+      </div>
+      <div class="why-item">
+        <div><span class="k">Location</span><h3>Working hours that overlap yours</h3><p>Our India-based team overlaps with European business hours and US mornings, so reviews often come back the next day.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENGAGE ================= -->
+<section class="engage" id="engage">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="label">Ways to work with us</span>
+        <h2 style="margin-top:18px">Three ways to work with us</h2>
+      </div>
+      <p class="lede" style="max-width:440px;margin:0">Every engagement starts with a free 30-minute call and a written scope with fixed deliverables.</p>
+    </div>
+    <div class="eng-grid">
+      <div class="eng">
+        <span class="dur">TYPICALLY 2–4 WEEKS</span>
+        <h3>Gap assessment</h3>
+        <p>An independent review of your device, DHF, risk file or submission plan, with a prioritised fix list.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12B89A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Fixed fee, fixed scope</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12B89A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Findings ranked by regulatory risk</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12B89A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Read-out with your team</li>
+        </ul>
+      </div>
+      <div class="eng hl">
+        <span class="dur">MILESTONE-BASED</span>
+        <h3>Workstream delivery</h3>
+        <p>We own a defined workstream, such as DV, human factors or the device sections of your dossier, through to completion.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Named lead consultant</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Partner labs coordinated for you</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Weekly status, audit-ready outputs</li>
+        </ul>
+      </div>
+      <div class="eng">
+        <span class="dur">MONTHLY RETAINER</span>
+        <h3>Fractional device team</h3>
+        <p>Ongoing device expertise for pharma and biotech teams that don't yet have one in-house.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12B89A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Agreed hours each month</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12B89A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Supplier and CDMO meetings</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12B89A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Document reviews on demand</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="dot">01</div><h4>Discovery call</h4><p>30 minutes, under NDA if you prefer, to understand your product and timeline.</p></div>
+      <div class="step"><div class="dot">02</div><h4>Written scope</h4><p>Objectives, deliverables, assumptions and partner involvement, within 3 working days.</p></div>
+      <div class="step"><div class="dot">03</div><h4>Delivery</h4><p>Hands-on work with weekly check-ins and documented technical reviews.</p></div>
+      <div class="step"><div class="dot">04</div><h4>Hand-over</h4><p>Final documents, knowledge transfer to your team and follow-up support.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="label">FAQ</span>
+      <h2 style="margin-top:18px">Common questions</h2>
+      <p class="lede">Something else on your mind? Ask us directly on a discovery call.</p>
+    </div>
+    <div>
+      <details open>
+        <summary>Do you run laboratory testing yourselves?<span class="pm"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>We design the test strategy, write protocols, develop and validate methods, and interpret the data. Physical testing runs at qualified partner laboratories, which we name in your proposal and coordinate on your behalf.</p>
+      </details>
+      <details>
+        <summary>Can you work alongside our CDMO or device supplier?<span class="pm"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Yes. Much of our work sits between the sponsor, the fill-finish CDMO and the device platform supplier. We act as your technical representative so requirements, risks and test data line up across all three.</p>
+      </details>
+      <details>
+        <summary>Which markets do you support?<span class="pm"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Our focus is the United States (FDA, 21 CFR Part 4) and the European Union (EU MDR, Article 117). We also support the UK, Canada, Australia, the Middle East, Latin America and India.</p>
+      </details>
+      <details>
+        <summary>We are a small biotech. Is this affordable?<span class="pm"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Our lean, senior model is built for exactly that. Most clients start with a fixed-fee gap assessment, then add workstreams once they've seen the quality of our output.</p>
+      </details>
+      <details>
+        <summary>How do you protect our confidential information?<span class="pm"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>We sign your NDA or ours before any technical discussion, limit access to the named project team and return or destroy materials at the end of the engagement.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="label">Contact</span>
+      <h2 style="margin-top:18px">Tell us where your programme is stuck.</h2>
+      <p class="lede">We reply within two working days with an initial view and suggested next steps.</p>
+      <div class="c-list">
+        <div><span>Email</span><a href="mailto:contact@drugdevice360.com">contact@drugdevice360.com</a></div>
+        <div><span>Serving</span>United States · Europe · Worldwide</div>
+        <div><span>Team</span>India-based, working US &amp; EU hours</div>
+      </div>
+    </div>
+    <form id="enquiry" novalidate>
+      <h3>Start a conversation</h3>
+      <div class="row">
+        <div><label for="f-name">Name</label><input id="f-name" autocomplete="name" required></div>
+        <div><label for="f-co">Company</label><input id="f-co" autocomplete="organization"></div>
+      </div>
+      <div><label for="f-mail">Work email</label><input id="f-mail" type="email" autocomplete="email" required></div>
+      <div>
+        <label id="f-dev-l">Device type</label>
+        <div class="chips-in" role="radiogroup" aria-labelledby="f-dev-l">
+          <input type="radio" name="dev" id="d1" value="Prefilled syringe" checked><label for="d1">Prefilled syringe</label>
+          <input type="radio" name="dev" id="d2" value="Autoinjector"><label for="d2">Autoinjector</label>
+          <input type="radio" name="dev" id="d3" value="Pen injector"><label for="d3">Pen injector</label>
+          <input type="radio" name="dev" id="d4" value="On-body injector"><label for="d4">On-body</label>
+          <input type="radio" name="dev" id="d5" value="Other"><label for="d5">Other</label>
+        </div>
+      </div>
+      <div><label for="f-stage">Where are you today?</label>
+        <select id="f-stage"><option>Selecting a device or platform</option><option>In design &amp; development</option><option>Planning verification / human factors</option><option>Preparing a submission</option><option>Marketed product / remediation</option></select></div>
+      <div><label for="f-msg">What do you need help with?</label><textarea id="f-msg" placeholder="Drug type, target markets, timelines, current blockers..."></textarea></div>
+      <button class="btn btn-coral" type="submit">Send enquiry
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="form-msg" id="form-msg" role="status"></div>
+      <p class="form-note">Sending opens your email app with the details filled in. You can also write to contact@drugdevice360.com.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <a href="#top" class="brand"><img src="assets/dd360-logo-horizontal-white.svg" alt="Drug Device 360, combination product consulting" height="52"></a>
+      <nav class="f-links" aria-label="Footer"><a href="#services">Services</a><a href="#devices">Devices</a><a href="#why">Why DD360</a><a href="#engage">Engagements</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+    </div>
+    <p class="disc">Drug Device 360 provides consulting and development support for drug-device combination products and medical devices. Laboratory testing, certification and other specialist activities are delivered through qualified partner organisations, identified in each proposal. Regulatory decisions rest with the relevant authorities and Notified Bodies. Device drawings on this site are illustrative.</p>
+    <div class="f-bot"><span>© <span id="yr">2026</span> Drug Device 360</span><span>Combination product consulting · US · EU · Global</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  function onScroll(){hdr.classList.toggle('solid',window.scrollY>30)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var menu=document.getElementById('menu'),btn=document.getElementById('menuBtn');
+  btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false')})});
+  document.getElementById('enquiry').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var g=function(id){return document.getElementById(id).value.trim()};
+    var msg=document.getElementById('form-msg');msg.style.display='block';
+    var name=g('f-name'),mail=g('f-mail');
+    if(!name||mail.indexOf('@')<1){msg.textContent='Please add your name and a valid work email.';return}
+    var dev=(document.querySelector('input[name=dev]:checked')||{}).value||'';
+    var co=g('f-co');
+    var body='Name: '+name+'\nCompany: '+co+'\nEmail: '+mail+'\nDevice: '+dev+'\nStage: '+g('f-stage')+'\n\n'+g('f-msg');
+    var href='mailto:contact@drugdevice360.com?subject='+encodeURIComponent('Enquiry: '+dev+(co?' | '+co:''))+'&body='+encodeURIComponent(body);
+    msg.textContent='Opening your email app. If nothing happens, email contact@drugdevice360.com directly.';
+    try{window.location.href=href}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
